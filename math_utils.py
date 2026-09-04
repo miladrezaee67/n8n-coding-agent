@@ -1,41 +1,41 @@
 """Small wrappers around Python's addition and subtraction operators.
 
-The functions accept arbitrary operands and preserve Python's normal operator
-dispatch, including custom operator implementations and reflected methods.
+The functions accept arbitrary operands and delegate directly to Python's
+standard operator dispatch, including custom and reflected operator methods.
 """
 
 from typing import Any
 
+__all__ = ["add", "subtract"]
+
 
 def add(a: Any, b: Any) -> Any:
-    """Return ``a + b`` using Python's normal operator semantics.
+    """Return the result of applying the ``+`` operator to two operands.
 
     Args:
         a: The left operand.
         b: The right operand.
 
     Returns:
-        The result produced by the addition operator.
+        The value produced by ``a + b``.
 
     Raises:
-        Any exception raised while evaluating the operation, including
-        ``TypeError`` when the operands do not support addition.
+        Exception: Any exception raised while evaluating ``a + b``.
     """
     return a + b
 
 
 def subtract(a: Any, b: Any) -> Any:
-    """Return ``a - b`` using Python's normal operator semantics.
+    """Return the result of applying the ``-`` operator to two operands.
 
     Args:
         a: The left operand.
         b: The right operand.
 
     Returns:
-        The result produced by the subtraction operator.
+        The value produced by ``a - b``.
 
     Raises:
-        Any exception raised while evaluating the operation, including
-        ``TypeError`` when the operands do not support subtraction.
+        Exception: Any exception raised while evaluating ``a - b``.
     """
     return a - b
